@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GAMING NIGHT CLUB</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('https://img.freepik.com/free-vector/realistic-hexagonal-background_79603-1646.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: rgba(0, 0, 0, 0.9);
+            color: #00FF7F;
+            padding: 20px;
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: #00FF7F;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 0 5px;
+            transition: background 0.3s ease;
+            font-size: 1.2rem;
+        }
+
+        .tab:hover {
+            background-color: #00FF7F;
+            color: black;
+        }
+
+        .tab.active {
+            background-color: #00FF7F;
+            color: black;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+            color: black;
+        }
+
+        .btn {
+            background-color: #00FF7F;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #008B45;
+        }
+
+        .card {
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        #totalRevenue {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #FFD700;
+            text-align: center;
+            padding: 20px 0;
+            border: 2px solid #FFD700;
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .scrollable-container {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 10px;
+            border: 1px solid #00FF7F;
+            border-radius: 8px;
+        }
+
+        .paid {
+            color: #28a745;
+        }
+
+        .unpaid {
+            color: #dc3545;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #6a0572;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .tab {
+            flex: 1;
+            text-align: center;
+            padding: 15px;
+            background-color: #292b45;
+            color: #fff;
+            cursor: pointer;
+            border-radius: 10px;
+            margin: 0 5px;
+            transition: background 0.3s ease;
+        }
+
+        .tab:hover {
+            background-color: #6a0572;
+        }
+
+        .tab.active {
+            background-color: #6a0572;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 8px;
+            margin-top: 5px;
+        }
+
+        input:focus, select:focus {
+            outline: 2px solid #6a0572;
+        }
+
+        .btn {
+            background-color: #6a0572;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #450143;
+        }
+
+        .card {
+            background-color: #292b45;
+            color: white;
+            padding: 15px;
+            border-radius: 10px;
+            margin-bottom: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .scrollable-container {
+            max-height: 400px;
+            overflow-y: auto;
+            margin-top: 10px;
+        }
+
+        .paid {
+            color: #28a745;
+        }
+
+        .unpaid {
+            color: #dc3545;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease forwards;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>GAMING NIGHT CLUB</header>
+
+    <div class="tabs">
+        <div id="tab-dashboard" class="tab active" onclick="showSection('dashboard')">Dashboard</div>
+        <div id="tab-history" class="tab" onclick="showSection('history')">History</div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="section-dashboard">
+        <h2>Add New Client</h2>
+        <div class="form-group fade-in">
+            <label for="clientName">Client Name</label>
+            <input type="text" id="clientName" placeholder="Enter client name">
+        </div>
+        <div class="form-group fade-in">
+            <label for="clientTime">Select Time or Matches</label>
+            <select id="clientTime" onchange="handleTimeChange()">
+                <option value="15">30 Minutes - 15 DH</option>
+                <option value="25">1 Hour - 25 DH</option>
+                <option value="custom">Custom FIFA Matches</option>
+            </select>
+            <input type="number" id="fifaMatchesInput" placeholder="Enter number of matches" style="display:none">
+        </div>
+        <div class="form-group fade-in">
+            <label>
+                <input type="checkbox" id="isNewClient"> New Client (Promo)
+            </label>
+        </div>
+        <button class="btn fade-in" onclick="addClient()">Add Client</button>
+
+        <h2>Unpaid Clients</h2>
+        <div id="unpaidClientsContainer" class="scrollable-container fade-in"></div>
+
+        <h2>Paid Clients (Live History)</h2>
+        <div id="paidClientsContainer" class="scrollable-container fade-in"></div>
+
+        <h2>Total Revenue</h2>
+        <p id="totalRevenue" class="fade-in">0 DH</p>
+    </div>
+
+    <!-- History Section -->
+    <div id="section-history" style="display: none;">
+        <h2>Daily History</h2>
+        <div id="historyContainer"></div>
+    </div>
+
+    <script>
+        const clients = [];
+        const dailyHistory = {};
+
+        function handleTimeChange() {
+            const clientTime = document.getElementById('clientTime').value;
+            if (clientTime === 'custom') {
+                document.getElementById('fifaMatchesInput').style.display = 'block';
+            } else {
+                document.getElementById('fifaMatchesInput').style.display = 'none';
+            }
+        }
+
+        function addClient() {
+            const clientName = document.getElementById('clientName').value;
+            const clientTime = document.getElementById('clientTime').value;
+            const fifaMatches = document.getElementById('fifaMatchesInput').value;
+            const isNewClient = document.getElementById('isNewClient').checked;
+
+            if (!clientName) {
+                alert("Client name is required.");
+                return;
+            }
+
+            let cost = 0;
+            let detail = "";
+            if (clientTime === "custom" && (!fifaMatches || fifaMatches <= 0)) {
+                alert("Please enter a valid number of FIFA matches.");
+                return;
+            }
+
+            if (clientTime === "custom") {
+                cost = fifaMatches * 7;
+                detail = `${fifaMatches} FIFA Matches`;
+            } else {
+                cost = parseFloat(clientTime);
+                detail = clientTime === "15" ? "30 Minutes" : "1 Hour";
+            }
+
+            if (isNewClient) {
+                if (clientTime === "15") cost = 10;
+                if (clientTime === "25") cost = 20;
+            }
+
+            const client = { id: clients.length + 1, name: clientName, cost, detail, paid: false };
+            clients.push(client);
+            updateClients();
+            document.getElementById('clientName').value = '';
+            document.getElementById('clientTime').value = '15';
+            document.getElementById('fifaMatchesInput').value = '';
+            document.getElementById('isNewClient').checked = false;
+        }
+
+        function markAsPaid(clientId) {
+            const client = clients.find(c => c.id === clientId);
+            if (client) {
+                client.paid = true;
+                updateClients();
+            }
+        }
+
+        function updateClients() {
+            let totalRevenue = 0;
+            const unpaidClientsContainer = document.getElementById('unpaidClientsContainer');
+            const paidClientsContainer = document.getElementById('paidClientsContainer');
+
+            unpaidClientsContainer.innerHTML = '';
+            paidClientsContainer.innerHTML = '';
+
+            // Display Unpaid Clients
+            clients.forEach(client => {
+                const clientDiv = document.createElement('div');
+                clientDiv.classList.add('card');
+                clientDiv.innerHTML = `
+                    <p><strong>${client.name}</strong> - ${client.detail}</p>
+                    <p>Cost: ${client.cost} DH</p>
+                    <button class="btn" onclick="markAsPaid(${client.id})">${client.paid ? 'Paid' : 'Mark as Paid'}</button>
+                `;
+
+                if (client.paid) {
+                    totalRevenue += client.cost;
+                    paidClientsContainer.appendChild(clientDiv);
+                } else {
+                    unpaidClientsContainer.appendChild(clientDiv);
+                }
+            });
+
+            document.getElementById('totalRevenue').textContent = `${totalRevenue} DH`;
+        }
+
+        function updateDailyHistory() {
+            let totalRevenue = 0;
+            const paidClients = clients.filter(c => c.paid);
+            paidClients.forEach(client => totalRevenue += client.cost);
+
+            const date = new Date().toLocaleDateString();
+            dailyHistory[date] = { earnings: totalRevenue, details: paidClients };
+
+            const historyContainer = document.getElementById('historyContainer');
+            historyContainer.innerHTML = '';
+            Object.keys(dailyHistory).forEach(date => {
+                const historyDiv = document.createElement('div');
+                historyDiv.classList.add('card');
+                historyDiv.innerHTML = `
+                    <p><strong>${date}</strong></p>
+                    <p>Total Earnings: ${dailyHistory[date].earnings} DH</p>
+                    <button onclick="showHistoryDetails('${date}')" class="btn">View Details</button>
+                `;
+                historyContainer.appendChild(historyDiv);
+            });
+        }
+
+        function showHistoryDetails(date) {
+            const details = dailyHistory[date].details;
+            let detailsHTML = '<h3>Paid Clients:</h3>';
+            details.forEach(client => {
+                detailsHTML += `<p><strong>${client.name}</strong> - ${client.detail} - ${client.cost} DH</p>`;
+            });
+            alert(detailsHTML);
+        }
+
+        function showSection(section) {
+            document.getElementById('section-dashboard').style.display = section === 'dashboard' ? 'block' : 'none';
+            document.getElementById('section-history').style.display = section === 'history' ? 'block' : 'none';
+            document.getElementById('tab-dashboard').classList.toggle('active', section === 'dashboard');
+            document.getElementById('tab-history').classList.toggle('active', section === 'history');
+            if (section === 'history') {
+                updateDailyHistory();
+            }
+        }
+    </script>
+</body>
+</html>
